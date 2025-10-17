@@ -6,7 +6,7 @@ export const useWhiteboard = (groupId: number) => {
   const [color, setColor] = useState('#000000');
   const [brushSize, setBrushSize] = useState(5);
 
-  const startDrawing = useCallback((event: MouseEvent<HTMLCanvasElement>) => {
+  const startDrawing = useCallback((e: MouseEvent<HTMLCanvasElement>) => {
     setDrawing(true);
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -15,7 +15,7 @@ export const useWhiteboard = (groupId: number) => {
 
     const rect = canvas.getBoundingClientRect();
     ctx.beginPath();
-    ctx.moveTo(event.clientX - rect.left, event.clientY - rect.top);
+    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
   }, []);
 
   const finishDrawing = useCallback(() => {
@@ -27,7 +27,7 @@ export const useWhiteboard = (groupId: number) => {
     ctx.closePath();
   }, []);
 
-  const draw = useCallback((event: MouseEvent<HTMLCanvasElement>) => {
+  const draw = useCallback((e: MouseEvent<HTMLCanvasElement>) => {
     if (!drawing) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -35,7 +35,7 @@ export const useWhiteboard = (groupId: number) => {
     if (!ctx) return;
 
     const rect = canvas.getBoundingClientRect();
-    ctx.lineTo(event.clientX - rect.left, event.clientY - rect.top);
+    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
     ctx.strokeStyle = color;
     ctx.lineWidth = brushSize;
     ctx.lineCap = 'round';
