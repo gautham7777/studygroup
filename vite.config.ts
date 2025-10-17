@@ -5,8 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      // FIX: Changed base path to match the repository name 'studygroup'
-      base: '/studygroup/',
+      // Set base to relative path for flexible deployment
+      base: './',
       server: {
         port: 3000,
         host: '0.0.0.0',
