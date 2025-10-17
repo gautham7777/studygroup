@@ -5,28 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StudySync</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'primary': '#4f46e5',
-              'secondary': '#10b981',
-              'background': '#f8fafc',
-              'surface': '#ffffff',
-              'on-surface': '#1f2937',
-              'on-primary': '#ffffff',
-              'on-secondary': '#ffffff',
-            }
-          }
-        }
-      }
-    </script>
-    <!-- Vite will inject the correct CSS and JS files during build -->
   </head>
   <body class="bg-background text-on-surface">
     <div id="root"></div>
-    <!-- DO NOT manually reference index.tsx; Vite will inject the built JS -->
+    <!-- Vite injects the compiled JS automatically -->
   </body>
 </html>
