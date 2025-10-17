@@ -1,0 +1,5 @@
+{
+  "name": "StudySync",
+  "description": "A web-based platform that facilitates student collaboration by matching compatible study partners and providing basic tools for group interaction and AI-powered study assistance.",
+  "requestFramePermissions": []
+}
